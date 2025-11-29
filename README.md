@@ -22,12 +22,12 @@
 
 ---
 
-### ช่องทางติดตาม & ติดต่อ
+ช่องทางติดตาม & ติดต่อ
 
 - TikTok: [@taowang.ai](https://www.tiktok.com/@taowang.ai)
 - Facebook: [TAO WANG Studio](https://www.facebook.com/taowangstudio)
 - Instagram: [@taowang.ai](https://www.instagram.com/taowang.ai)
-- Email: taowangstudio@gmail.com
+- Email: allredmi4782@gmail.com
 
 ---
  คำคมประจำตัว
