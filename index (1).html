@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSM — Digital Studio Marketplace</title>
+
+  <!-- Google Font (Sarabun) -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="DSM — แพลตฟอร์มซื้อขายสื่อดิจิทัล โปร่งใส มั่นคง ค่าธรรมเนียมต่ำ" />
+
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#0f0f10;
+      --muted:#bfc3c7;
+      --accent1:#8a3df0; /* purple */
+      --accent2:#2ea1ff; /* blue */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: 'Sarabun', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, #000 0%, #070707 100%);
+      color:#eee;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      font-size:16px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:48px auto;
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+
+    .brand img{
+      width:88px;
+      height:auto;
+      border-radius:8px;
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      padding:8px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-weight:400;
+      font-size:13px;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+      font-size:14px;
+    }
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:36px;
+    }
+
+    .hero-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    .kicker{
+      display:inline-block;
+      font-weight:700;
+      font-size:13px;
+      color: white;
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:12px;
+    }
+
+    .hero h2{
+      margin:6px 0 12px 0;
+      font-size:32px;
+      line-height:1.05;
+    }
+    .hero p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-weight:300;
+    }
+
+    .features{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .feature{
+      background:var(--glass);
+      padding:10px 12px;
+      border-radius:10px;
+      font-size:14px;
+      color:var(--muted);
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    /* right column - logo preview */
+    .logo-preview{
+      text-align:center;
+    }
+    .logo-preview img{
+      max-width:100%;
+      height:auto;
+      border-radius:12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    /* sections */
+    .section{
+      margin-top:26px;
+      display:grid;
+      gap:16px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;
+      border-radius:12px;
+    }
+    .card h3{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* contact form */
+    .contact{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+    }
+    .contact label{display:block;font-weight:600;margin-bottom:6px}
+    .contact input,.contact textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06);
+      background:transparent;
+      color:#fff;
+      resize:vertical;
+      margin-bottom:12px;
+    }
+    .contact button{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#fff;
+      border:0;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:40px;
+      padding:18px 10px;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns: 1fr}
+      .cards{grid-template-columns: repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .cards{grid-template-columns: 1fr}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      .brand h1{font-size:20px}
+      .hero h2{font-size:24px}
+      .brand img{width:64px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- ใส่ไฟล์โลโก้ชื่อ dsm-logo.png ในโฟลเดอร์เดียวกับ index.html -->
+        <img src="dsm-logo.png" alt="DSM logo">
+        <div>
+          <h1>DSM</h1>
+          <p>Digital Studio Marketplace — โปร่งใส มั่นคง ค่าธรรมเนียมต่ำ</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#features">ฟีเจอร์</a>
+        <a href="#marketplace">Marketplace</a>
+        <a href="#contact" class="cta">ติดต่อเรา</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <span class="kicker">แพลตฟอร์มสื่อดิจิทัล</span>
+          <h2>ขายงานดิจิทัลของคุณให้คนทั่วโลก</h2>
+          <p class="lead">DSM ให้พื้นที่สำหรับศิลปิน นักดนตรี และครีเอเตอร์ในการขายผลงานดิจิทัล ค่าธรรมเนียมต่ำ และระบบชำระเงินที่ปลอดภัย</p>
+
+          <div class="features" id="features">
+            <div class="feature">📦 รองรับไฟล์หลากหลาย (ภาพ, เพลง, วิดีโอ)</div>
+            <div class="feature">🔒 ปลอดภัย และจัดการลิขสิทธิ์</div>
+            <div class="feature">🌍 เข้าถึงผู้ซื้อทั่วโลก</div>
+          </div>
+        </div>
+
+        <div class="logo-preview">
+          <!-- preview โลโก้ขนาดใหญ่ (ใช้ไฟล์เดียวกัน) -->
+          <img src="dsm-logo.png" alt="DSM logo preview">
+          <p style="color:var(--muted);margin-top:10px;font-size:14px">ตัวอย่างโลโก้ — เปลี่ยนไฟล์ `dsm-logo.png` เพื่ออัปเดต</p>
+        </div>
+      </section>
+
+      <section class="section" id="marketplace">
+        <div class="cards">
+          <div class="card">
+            <h3>สำหรับครีเอเตอร์</h3>
+            <p>สร้างหน้าแสดงผลงาน ตั้งราคาขาย และจัดการไฟล์ดาวน์โหลดได้ง่าย</p>
+          </div>
+
+          <div class="card">
+            <h3>สำหรับผู้ซื้อ</h3>
+            <p>ค้นหา และซื้อสื่อคุณภาพจากครีเอเตอร์ทั่วโลก พร้อมใบเสร็จและการดาวน์โหลดที่สะดวก</p>
+          </div>
+
+          <div class="card">
+            <h3>ระบบการชำระเงิน</h3>
+            <p>รองรับชำระผ่านบัตรเครดิต/เดบิต และช่องทางออนไลน์อื่น ๆ ปลอดภัยด้วยมาตรฐานสากล</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2 style="margin-bottom:8px">ติดต่อเรา</h2>
+        <div class="contact">
+          <!-- form นี้เป็นตัวอย่าง (ไม่ส่งจริง) หากต้องการทำให้ส่งได้ ต้องตั้ง server หรือใช้ service เช่น Formspree / Netlify Forms -->
+          <form onsubmit="alert('ฟอร์มตัวอย่าง — ต่อเชื่อม backend เพื่อใช้งานจริง'); return false;">
+            <label for="name">ชื่อ</label>
+            <input id="name" name="name" type="text" placeholder="ชื่อของคุณ" required>
+
+            <label for="email">อีเมล</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="message">ข้อความ</label>
+            <textarea id="message" name="message" rows="5" placeholder="รายละเอียด..." required></textarea>
+
+            <button type="submit">ส่งข้อความ</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © 2025 DSM Studio — แพลตฟอร์มซื้อขายสื่อดิจิทัล | โปร่งใส · มั่นคง · ค่าธรรมเนียมต่ำ
+    </footer>
+  </div>
+</body>
+</html>
